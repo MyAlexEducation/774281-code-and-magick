@@ -197,6 +197,10 @@
   var wizardSpeed = 3;
   //ширина мага
   var wizardWidth = 70;
+  //высота мага пропорциональнае ширине
+  var getWizardHeight = function () {
+    return 1.337 * wizardWidth; //1.337 - отношение высоты мага к его ширине
+  }
 </script>
 <script src="js/game.js"></script>
 
