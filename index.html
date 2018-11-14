@@ -182,6 +182,7 @@
 </template>
 
 <script>
+  var WIZARD_PROPORTION_SIZE = 1.337;
   //размер фаербола
   var fireballSize = 22;
   //скорость движения мага
@@ -199,7 +200,7 @@
   }
   //высота мага пропорциональная ширине
   var getWizardHeight = function () {
-    return 1.337 * wizardWidth; //1.337 - отношение высоты мага к его ширине
+    return WIZARD_PROPORTION_SIZE * wizardWidth;
   }
   //положение мага в начале игры по оси x
   var getWizardX = function (width) {
