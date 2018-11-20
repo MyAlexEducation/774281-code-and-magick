@@ -15,6 +15,7 @@ var HISTOGRAM_HEIGHT = 150;
 var BAR_WIDTH = 40;
 var NAME_Y = CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT * 3 + HISTOGRAM_HEIGHT;
 var MAX_BAR_HEIGHT = HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT * 2;
+var THIS_PLAYER_COLOR = 'rgba(255, 0, 0, 1)';
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -42,9 +43,14 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.strokeText('Список результатов:', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT);
 
   var maxTime = getMaxElement(times);
-  ctx.fillStyle = '#000';
+  ctx.fillStyle = 'hsl(25, 100%, 50%)';
 
   for (var i = 0; i < players.length; i++) {
+    if (players[i] === 'Вы') {
+      ctx.fillStyle = THIS_PLAYER_COLOR;
+    } else {
+      ctx.fillStyle = 'hsl(240,' + Math.random() * 100 + '%, 50%)';
+    }
     ctx.strokeText(players[i], CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y);
     var barHeight = (MAX_BAR_HEIGHT * times[i]) / maxTime;
     ctx.fillRect(CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y - barHeight - MESSAGE_LINE_HEIGHT, BAR_WIDTH, barHeight);
