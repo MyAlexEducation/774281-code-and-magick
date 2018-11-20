@@ -1,5 +1,5 @@
-var CLOUD_WIDTH = 500;
-var CLOUD_HEIGHT = 200;
+var CLOUD_WIDTH = 420;
+var CLOUD_HEIGHT = 270;
 
 var renderCloud = function(ctx, x, y, color) {
   ctx.fillStyle = color;
