@@ -7,5 +7,6 @@ var renderCloud = function(ctx, x, y, color) {
 };
 
 window.renderStatistics = function (ctx, players, times) {
-
-}
+  renderCloud(ctx, 110, 60, 'rgba(0, 0, 0, 0.3)');
+  renderCloud(ctx, 100, 50, '#fff');
+};
