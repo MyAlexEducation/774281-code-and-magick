@@ -6,7 +6,9 @@ var SHADOW_SHIFT_X = 10;
 var SHADOW_SHIFT_Y = 10;
 var CLOUD_COLOR = '#fff';
 var SHADOW_COLOR = 'rgba(0, 0, 0, 0.7)';
+var MESSAGE_FONT_SIZE = 16;
 var MESSAGE_FONT = '16px "PT Mono"';
+var MESSAGE_LINE_HEIGHT = MESSAGE_FONT_SIZE + MESSAGE_FONT_SIZE / 4; // размер шрифта + 1/4 от его размера
 var MARGIN_COLUMN = 50;
 var PADDING_CLOUD = MARGIN_COLUMN / 2;
 
@@ -20,6 +22,6 @@ window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X, CLOUD_Y, CLOUD_COLOR);
 
   ctx.font = MESSAGE_FONT;
-  ctx.strokeText();
-  ctx.strokeText();
+  ctx.strokeText('Ура вы победили!', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD);
+  ctx.strokeText('Список результатов:', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT);
 };
