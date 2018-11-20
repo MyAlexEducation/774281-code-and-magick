@@ -13,6 +13,7 @@ var MARGIN_COLUMN = 50;
 var PADDING_CLOUD = MARGIN_COLUMN / 2;
 var HISTOGRAM_HEIGHT = 150;
 var BAR_WIDTH = 40;
+var NAME_Y = CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT * 2 + HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT;
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -39,7 +40,9 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.strokeText('Ура вы победили!', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD);
   ctx.strokeText('Список результатов:', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT);
 
-  for (var i = 0; i < players.length; i++) {
+  var maxTime = getMaxElement(times);
 
+  for (var i = 0; i < players.length; i++) {
+    
   }
 };
