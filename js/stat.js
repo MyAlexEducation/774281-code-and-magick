@@ -43,6 +43,6 @@ window.renderStatistics = function (ctx, players, times) {
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < players.length; i++) {
-    
+    ctx.strokeText(players[i], CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y);
   }
 };
