@@ -13,7 +13,6 @@ var MARGIN_COLUMN = 50;
 var PADDING_CLOUD = MARGIN_COLUMN / 2;
 var HISTOGRAM_HEIGHT = 150;
 var BAR_WIDTH = 40;
-var BAR_HEIGHT = HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT * 2;
 var NAME_Y = CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT * 2 + HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT;
 var MAX_BAR_HEIGHT = HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT * 2;
 
@@ -43,9 +42,11 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.strokeText('Список результатов:', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT);
 
   var maxTime = getMaxElement(times);
+  ctx.fillStyle = '#000';
 
   for (var i = 0; i < players.length; i++) {
     ctx.strokeText(players[i], CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y);
-    
+    var barHeight = (MAX_BAR_HEIGHT * times[i]) / maxTime;
+    ctx.fillRect(CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y - barHeight - MESSAGE_LINE_HEIGHT, BAR_WIDTH, barHeight);
   }
 };
