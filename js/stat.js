@@ -11,6 +11,8 @@ var MESSAGE_FONT = '16px "PT Mono"';
 var MESSAGE_LINE_HEIGHT = MESSAGE_FONT_SIZE + MESSAGE_FONT_SIZE / 4; // размер шрифта + 1/4 от его размера
 var MARGIN_COLUMN = 50;
 var PADDING_CLOUD = MARGIN_COLUMN / 2;
+var HISTOGRAM_HEIGHT = 150;
+var BAR_WIDTH = 40;
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -24,4 +26,6 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.font = MESSAGE_FONT;
   ctx.strokeText('Ура вы победили!', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD);
   ctx.strokeText('Список результатов:', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT);
+
+
 };
