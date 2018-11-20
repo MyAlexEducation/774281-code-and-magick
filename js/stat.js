@@ -11,6 +11,6 @@ var renderCloud = function(ctx, x, y, color) {
 };
 
 window.renderStatistics = function (ctx, players, times) {
-  renderCloud(ctx, 110, 60, 'rgba(0, 0, 0, 0.3)');
-  renderCloud(ctx, 100, 50, '#fff');
+  renderCloud(ctx, CLOUD_X + SHADOW_SHIFT_X, CLOUD_Y + SHADOW_SHIFT_Y, 'rgba(0, 0, 0, 0.3)');
+  renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 };
