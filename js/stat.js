@@ -48,5 +48,6 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.strokeText(players[i], CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y);
     var barHeight = (MAX_BAR_HEIGHT * times[i]) / maxTime;
     ctx.fillRect(CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y - barHeight - MESSAGE_LINE_HEIGHT, BAR_WIDTH, barHeight);
+    ctx.strokeText(Math.round(times[i]), CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y - barHeight - MESSAGE_LINE_HEIGHT * 2);
   }
 };
