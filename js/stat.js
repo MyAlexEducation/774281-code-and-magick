@@ -15,6 +15,7 @@ var HISTOGRAM_HEIGHT = 150;
 var BAR_WIDTH = 40;
 var BAR_HEIGHT = HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT * 2;
 var NAME_Y = CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT * 2 + HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT;
+var MAX_BAR_HEIGHT = HISTOGRAM_HEIGHT - MESSAGE_LINE_HEIGHT * 2;
 
 var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
@@ -45,5 +46,6 @@ window.renderStatistics = function (ctx, players, times) {
 
   for (var i = 0; i < players.length; i++) {
     ctx.strokeText(players[i], CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y);
+    
   }
 };
