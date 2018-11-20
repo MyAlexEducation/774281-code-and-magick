@@ -43,8 +43,6 @@ window.renderStatistics = function (ctx, players, times) {
   ctx.strokeText('Список результатов:', CLOUD_X + PADDING_CLOUD, CLOUD_Y + PADDING_CLOUD + MESSAGE_LINE_HEIGHT);
 
   var maxTime = getMaxElement(times);
-  ctx.fillStyle = 'hsl(25, 100%, 50%)';
-
   for (var i = 0; i < players.length; i++) {
     if (players[i] === 'Вы') {
       ctx.fillStyle = THIS_PLAYER_COLOR;
