@@ -75,5 +75,10 @@ var getRandomInt = function (min, max) {
 var randomData = function (massivData) {
   return massivData[getRandomInt(0, massivData.length)];
 };
+var randomWizard = function (wizard) {
+  wizard.name = randomData(name) + randomData(famale);
+  wizard.coatColor = randomData(coatColor);
+  wizard.eyesColor = randomData(eyesColor);
+};
 
 userDialog.classList.remove('hidden');
