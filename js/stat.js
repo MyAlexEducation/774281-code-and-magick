@@ -62,23 +62,32 @@ window.renderStatistics = function (ctx, players, times) {
 
 // module3-task1
 
+var NUMBER_WIZARDS = 4;
+
 var userDialog = document.querySelector('.setup');
 
-var name = ['Иван', 'Хуан', 'Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-var famale = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+var names = ['Иван', 'Хуан', 'Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
+var surname = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
+
+var wizards = [];
 
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 };
-var randomData = function (massivData) {
-  return massivData[getRandomInt(0, massivData.length)];
+var randomData = function (arrayData) {
+  return arrayData[getRandomInt(0, arrayData.length)];
 };
-var randomWizard = function (wizard) {
-  wizard.name = randomData(name) + randomData(famale);
-  wizard.coatColor = randomData(coatColor);
-  wizard.eyesColor = randomData(eyesColor);
+
+var Wizard = function () {
+  this.name = randomData(names) + ' ' + randomData(surname);
+  this.coatColor = randomData(coatColor);
+  this.eyesColor = randomData(eyesColor);
 };
+
+for (var i = 0; i < NUMBER_WIZARDS; i++) {
+  wizards[i] = new Wizard();
+}
 
 userDialog.classList.remove('hidden');
