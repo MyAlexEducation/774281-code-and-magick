@@ -107,7 +107,7 @@ userDialog.classList.remove('hidden');
 similarList.classList.remove('hidden');
 
 var fragment = document.createDocumentFragment();
-for (i = 0; i < 4; i++) {
+for (i = 0; i < NUMBER_WIZARDS; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
 similarListElement.appendChild(fragment);
