@@ -82,12 +82,19 @@ var getRandomInt = function (min, max) {
 var randomData = function (arrayData) {
   return arrayData[getRandomInt(0, arrayData.length)];
 };
+var fillArray = function (array, Fill, length) {
+  for (var i = 0; i < length; i++) {
+    array[i] = new Fill();
+  }
+};
 
 var Wizard = function () {
   this.name = randomData(names) + ' ' + randomData(surname);
   this.coatColor = randomData(coatColor);
   this.eyesColor = randomData(eyesColor);
 };
+
+fillArray(wizards, Wizard, NUMBER_WIZARDS);
 
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
@@ -99,15 +106,11 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-for (var i = 0; i < NUMBER_WIZARDS; i++) {
-  wizards[i] = new Wizard();
-}
-
 userDialog.classList.remove('hidden');
 similarList.classList.remove('hidden');
 
 var fragment = document.createDocumentFragment();
-for (i = 0; i < NUMBER_WIZARDS; i++) {
+for (var i = 0; i < NUMBER_WIZARDS; i++) {
   fragment.appendChild(renderWizard(wizards[i]));
 }
 similarListElement.appendChild(fragment);
