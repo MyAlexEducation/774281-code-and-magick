@@ -1,5 +1,7 @@
 'use strict';
 
+// module2-task1
+
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
@@ -58,6 +60,8 @@ window.renderStatistics = function (ctx, players, times) {
   }
 };
 
+// module3-task1
+
 var NUMBER_WIZARDS = 4;
 
 var userDialog = document.querySelector('.setup');
@@ -84,7 +88,7 @@ var fillArray = function (array, Fill, length) {
   }
 };
 var showElement = function (element) {
-  element.classList.remove('.hidden');
+  element.classList.remove('hidden');
 };
 
 var Wizard = function () {
