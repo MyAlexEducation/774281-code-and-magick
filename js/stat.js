@@ -101,7 +101,7 @@ var renderWizard = function (wizard) {
 
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
-  wizardElement.querySelector('.wizard-eyes').style.fill = wizards[i].eyesColor;
+  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
 
   return wizardElement;
 };
@@ -109,8 +109,15 @@ var renderWizard = function (wizard) {
 userDialog.classList.remove('hidden');
 similarList.classList.remove('hidden');
 
-var fragment = document.createDocumentFragment();
-for (var i = 0; i < NUMBER_WIZARDS; i++) {
-  fragment.appendChild(renderWizard(wizards[i]));
-}
-similarListElement.appendChild(fragment);
+var renderSimilarWizards = function () {
+  var fragment = document.createDocumentFragment();
+  for (var i = 0; i < wizards.length; i++) {
+    fragment.appendChild(renderWizard(wizards[i]));
+  }
+  similarListElement.appendChild(fragment);
+};
+
+renderSimilarWizards();
+
+userDialog.querySelector('.setup-similar').classList.remove('hidden');
+
