@@ -1,7 +1,5 @@
 'use strict';
 
-// module2-task1
-
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
@@ -59,8 +57,6 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.strokeText(String(Math.round(times[i])), CLOUD_X + PADDING_CLOUD + (BAR_WIDTH + MARGIN_COLUMN) * i, NAME_Y - barHeight - MESSAGE_LINE_HEIGHT * 2);
   }
 };
-
-// module3-task1
 
 var NUMBER_WIZARDS = 4;
 
