@@ -1,7 +1,5 @@
 'use strict';
 
-// module2-task1
-
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 100;
@@ -60,8 +58,6 @@ window.renderStatistics = function (ctx, players, times) {
   }
 };
 
-// module3-task1
-
 var NUMBER_WIZARDS = 4;
 
 var userDialog = document.querySelector('.setup');
@@ -69,12 +65,11 @@ var similarList = document.querySelector('.setup-similar');
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
+var wizards = [];
 var names = ['Иван', 'Хуан', 'Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
 var surname = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
 var coatColor = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var eyesColor = ['black', 'red', 'blue', 'yellow', 'green'];
-
-var wizards = [];
 
 var getRandomInt = function (min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -96,22 +91,13 @@ var Wizard = function () {
   this.coatColor = randomData(coatColor);
   this.eyesColor = randomData(eyesColor);
 };
-
-fillArray(wizards, Wizard, NUMBER_WIZARDS);
-
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
-
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
-
   return wizardElement;
 };
-
-showElement(userDialog);
-showElement(similarList);
-
 var renderSimilarWizards = function () {
   var fragment = document.createDocumentFragment();
   for (var i = 0; i < wizards.length; i++) {
@@ -120,4 +106,7 @@ var renderSimilarWizards = function () {
   similarListElement.appendChild(fragment);
 };
 
+fillArray(wizards, Wizard, NUMBER_WIZARDS);
+showElement(userDialog);
+showElement(similarList);
 renderSimilarWizards();
