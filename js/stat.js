@@ -87,6 +87,9 @@ var fillArray = function (array, Fill, length) {
     array[i] = new Fill();
   }
 };
+var showElement = function (element) {
+  element.classList.remove('.hidden');
+};
 
 var Wizard = function () {
   this.name = randomData(names) + ' ' + randomData(surname);
@@ -106,8 +109,8 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-userDialog.classList.remove('hidden');
-similarList.classList.remove('hidden');
+showElement(userDialog);
+showElement(similarList);
 
 var renderSimilarWizards = function () {
   var fragment = document.createDocumentFragment();
@@ -118,6 +121,3 @@ var renderSimilarWizards = function () {
 };
 
 renderSimilarWizards();
-
-userDialog.querySelector('.setup-similar').classList.remove('hidden');
-
